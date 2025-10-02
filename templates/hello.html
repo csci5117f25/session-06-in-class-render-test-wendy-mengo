@@ -14,6 +14,17 @@
 {% if name %}
 <h2>and hello to {{name}}</h2>
 {% endif %}
+
+{% if session %}
+    <h1>SESSION EXISTS</h1>
+    <code>
+        <pre>
+            {{session.user | tojson}}
+        </pre>
+    </code>
+{% else %}
+    <h1>NO SESSION</h1>
+{% endif %}
 <form action="/data" method="POST">
     <label>What's your name?</label><br>
     <input type="text" name="name" id="name"><br>
